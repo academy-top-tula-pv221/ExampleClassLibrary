@@ -11,5 +11,9 @@ namespace ExampleClassLibrary
         public string? City { set; get; }
         public string? Street { set; get; }
         public Address() { }
+        public override string ToString()
+        {
+            return $"city: {City}, street: {Street}";
+        }
     }
 }

@@ -23,5 +23,10 @@ namespace ExampleClassLibrary
             Age = age;
             Address = address;
         }
+
+        public override string ToString()
+        {
+            return $"User name: {Name}, age: {Age}, address: {Address}";
+        }
     }
 }

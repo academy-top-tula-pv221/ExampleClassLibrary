@@ -2,7 +2,7 @@
 
 namespace ExampleClassLibrary
 {
-    public class User
+    public partial class User
     {
         public string? Name { set; get; }
 
@@ -27,6 +27,18 @@ namespace ExampleClassLibrary
         public override string ToString()
         {
             return $"User name: {Name}, age: {Age}, address: {Address}";
+        }
+
+        public override bool Equals(Object? other)
+        {
+            if (other == null) return false;
+            
+            return this.Name!.Equals((other as User)?.Name) && this.Age.Equals((other as User)?.Age);
+        }
+
+        public override int GetHashCode()
+        {
+            return Age!.GetHashCode();
         }
     }
 }
